@@ -1,71 +1,77 @@
+import Hero from './components/Hero'
+import Benefits from './components/Benefits'
+import Process from './components/Process'
+import Fleet from './components/Fleet'
+import Pricing from './components/Pricing'
+import FAQ from './components/FAQ'
+import Contact from './components/Contact'
+
 function App() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
-      {/* Subtle pattern overlay */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(59,130,246,0.05),transparent_50%)]"></div>
+    <div className="bg-slate-950 text-slate-300">
+      <header className="sticky top-0 z-30 backdrop-blur bg-slate-950/70 border-b border-white/10">
+        <div className="container mx-auto px-6 py-4 flex items-center justify-between">
+          <div className="text-white font-extrabold tracking-tight text-xl">moviQ</div>
+          <nav className="hidden md:flex items-center gap-6 text-sm">
+            <a href="#benefits" className="hover:text-white">Korzyści</a>
+            <a href="#process" className="hover:text-white">Jak to działa</a>
+            <a href="#fleet" className="hover:text-white">Flota</a>
+            <a href="#pricing" className="hover:text-white">Cennik</a>
+            <a href="#faq" className="hover:text-white">FAQ</a>
+          </nav>
+          <a href="#contact" className="px-4 py-2 rounded-lg bg-emerald-500 text-white font-semibold hover:bg-emerald-600 transition-colors">Zgłoś się</a>
+        </div>
+      </header>
 
-      <div className="relative min-h-screen flex items-center justify-center p-8">
-        <div className="max-w-2xl w-full">
-          {/* Header with Flames icon */}
-          <div className="text-center mb-12">
-            <div className="inline-flex items-center justify-center mb-6">
-              <img
-                src="/flame-icon.svg"
-                alt="Flames"
-                className="w-24 h-24 drop-shadow-[0_0_25px_rgba(59,130,246,0.5)]"
-              />
+      <main>
+        <Hero />
+        <Benefits />
+        <Process />
+        <Fleet />
+        <section className="py-12 bg-slate-950">
+          <div className="container mx-auto px-6 grid md:grid-cols-2 gap-10">
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Oferta dla kierowców</h2>
+              <p className="text-slate-300">Szukasz auta, które nie będzie Twoim problemem? W moviQ dostajesz pełny pakiet serwisowy, opony, auto zastępcze i rozliczenia bez stresu. Ty jeździsz — my dbamy o resztę.</p>
             </div>
-
-            <h1 className="text-5xl font-bold text-white mb-4 tracking-tight">
-              Flames Blue
-            </h1>
-
-            <p className="text-xl text-blue-200 mb-6">
-              Build applications through conversation
-            </p>
-          </div>
-
-          {/* Instructions */}
-          <div className="bg-slate-800/50 backdrop-blur-sm border border-blue-500/20 rounded-2xl p-8 shadow-xl mb-6">
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                1
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Describe your idea</h3>
-                <p className="text-blue-200/80 text-sm">Use the chat panel on the left to tell the AI what you want to build</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4 mb-6">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                2
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Watch it build</h3>
-                <p className="text-blue-200/80 text-sm">Your app will appear in this preview as the AI generates the code</p>
-              </div>
-            </div>
-
-            <div className="flex items-start gap-4">
-              <div className="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-lg flex items-center justify-center font-bold">
-                3
-              </div>
-              <div>
-                <h3 className="font-semibold text-white mb-1">Refine and iterate</h3>
-                <p className="text-blue-200/80 text-sm">Continue the conversation to add features and make changes</p>
-              </div>
+            <div>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Oferta dla flot i partnerów</h2>
+              <p className="text-slate-300">Współpraca B2B: wynajem długoterminowy, rozliczenia tygodniowe lub miesięczne, auta zastępcze. Jesteśmy otwarci na współpracę z małymi i średnimi firmami.</p>
             </div>
           </div>
+        </section>
+        <Pricing />
+        <FAQ />
+        <Contact />
+      </main>
 
-          {/* Footer */}
-          <div className="text-center">
-            <p className="text-sm text-blue-300/60">
-              No coding required • Just describe what you want
-            </p>
+      <footer className="py-10 border-t border-white/10 bg-slate-950">
+        <div className="container mx-auto px-6 grid md:grid-cols-3 gap-8 text-sm">
+          <div>
+            <div className="text-white font-extrabold text-lg">moviQ</div>
+            <p className="text-slate-400 mt-2">Auto do Ubera i Bolta bez problemów. Auta od ręki, pełne ubezpieczenie, serwis i wsparcie 7/7.</p>
+          </div>
+          <div>
+            <div className="text-white font-semibold">Kontakt</div>
+            <ul className="mt-2 text-slate-400 space-y-1">
+              <li>Adres: ul. Przykładowa 1, 00-001 Warszawa</li>
+              <li>NIP: 0000000000 • KRS: 000000000 • REGON: 000000000</li>
+              <li>Telefon: +48 123 456 789</li>
+              <li>Email: hello@moviq.pl</li>
+              <li>Godziny pracy: Pon–Ndz 8:00–20:00</li>
+            </ul>
+          </div>
+          <div>
+            <div className="text-white font-semibold">Szybkie linki</div>
+            <ul className="mt-2 text-slate-400 space-y-1">
+              <li><a href="#fleet" className="hover:text-white">Dostępne auta</a></li>
+              <li><a href="#pricing" className="hover:text-white">Cennik</a></li>
+              <li><a href="#contact" className="hover:text-white">Zgłoś się</a></li>
+            </ul>
           </div>
         </div>
-      </div>
+        <div className="text-center text-slate-500 text-xs mt-8">© {new Date().getFullYear()} moviQ. Wszelkie prawa zastrzeżone.</div>
+      </footer>
     </div>
   )
 }
